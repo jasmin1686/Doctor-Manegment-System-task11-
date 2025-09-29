@@ -1,0 +1,59 @@
+﻿@model Doctor_Manegment_System_task11_.Controllers.PersonVM
+
+<div class="container">
+    <h1>Book Appointment</h1>
+
+    <div class="row">
+        @foreach (var item in Model.Doctors)
+        {
+            <div class="col-md-4 mb-4d-flex">
+                <div class="card doctor-card flex-fill">
+                    <img class="card-img-top" src="~/images/@item.ImageUrl" style="width: 100%; height: auto;" alt="Doctor Image">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">Specialization: @item.Specialization.Name</p>
+                        <a href="/BookanAppointment/CompleteAppointment/@item.Id" class="btn btn-primary">Book Appointment</a>
+                        
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    <div class=" row ">
+        <nav aria-label="Page navigation example">
+            <div class=" col d-flex justify-content-center">
+                <ul class="pagination">
+                    @if (ViewBag.currentPage >  1)
+                    {
+                        <li class="page-item"><a class="page-link" href="?page=@(ViewBag.currentPage-1)">Previous</a></li>
+                    }
+                    @for (int i = 1; i <= ViewBag.totalpage; i++)
+                    {
+                        <li class="page-item"><a class="page-link" href="?page=@i">@i</a></li>
+                    }
+                    @if (ViewBag.currentPage != ViewBag.totalpage)
+                    {
+                        <li class="page-item"><a class="page-link" href="?page=@(ViewBag.currentPage + 1)">Next</a></li>
+                    }
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+    
+</div>
+<style>
+    .doctor-img {
+        width: 100%;
+        height: 250px; 
+        object-fit: cover; 
+    }
+
+    .doctor-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%; 
+    }
+</style>
+
