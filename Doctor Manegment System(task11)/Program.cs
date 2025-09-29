@@ -9,7 +9,7 @@ namespace Doctor_Manegment_System_task11_
         {
             using (var context = new ApplicationDbContext())
             {
-                // تمسح أي Appointments فيها PatientId غير موجود في جدول Patients
+               
                 context.Database.ExecuteSqlRaw(@"
         DELETE FROM Appointments
         WHERE PatientId NOT IN (SELECT Id FROM Patients)
