@@ -1,0 +1,25 @@
+﻿@model List<Appointment>
+
+<h1>Reservations Management</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Doctor Name</th>
+            <th>Appointment Date</th>
+            <th>StartTime</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Doctor.Name</td>
+                <td>@item.PatientName</td>
+                <td>@item.AppointmentDate</td>
+                <td>@item.StartTime</td>
+            </tr>
+        }
+
+    </tbody>
+</table>

@@ -14,9 +14,5 @@ namespace Doctor_Manegment_System_task11_.Models
         public List<Patient> Patients { get; set; }
         public List <Appointment> Appointments { get; set; }
 
-        internal static object Skip(int v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

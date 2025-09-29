@@ -1,0 +1,27 @@
+﻿@model List<Doctor_Manegment_System_task11_.Models.Doctor>
+
+
+
+<section class="py-3 filter-bar">
+    <div class="container">
+        <div class="row" style="background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;">
+            <div class="col-12">
+                <form method="get" action="@Url.Action("Filter", "ReservationsManagement")">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="text" name="DoctorName" class="form-control" placeholder="DoctorName" value="@(ViewBag.SelectedDoctor ?? "")">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" name="SpecializationName" class="form-control" placeholder="SpecializationName" value="@(ViewBag.SelectedSpecialization ?? "")">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-dark w-100">Filter</button>
+                        </div>
+                    </div>
+                </form>
+               
+
+            </div>
+        </div>
+    </div>
+</section>

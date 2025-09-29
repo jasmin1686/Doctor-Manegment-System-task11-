@@ -6,5 +6,6 @@ namespace Doctor_Manegment_System_task11_.Controllers
     {
         public IQueryable<Doctor> BookanAppointment { get; set; }
         public List<Doctor> Doctors { get; set; }
+       
     }
 }
